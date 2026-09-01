@@ -21,7 +21,11 @@ function CompleteContent() {
 
   return (
     <main className="relative min-h-dvh overflow-hidden">
-      <KenBurnsBackground src={env.image} alt={env.name} />
+      <KenBurnsBackground
+        src={env.image}
+        srcSet={env.imageSrcSet}
+        alt={env.name}
+      />
       <div className="relative z-10 mx-auto flex min-h-dvh max-w-xl flex-col items-center justify-center px-6 pb-24 text-center">
         <section className="fade-in glass rounded-[32px] px-8 py-12">
           <p className="text-5xl">{forest.emoji}</p>

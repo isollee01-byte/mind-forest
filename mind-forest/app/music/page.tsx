@@ -26,7 +26,11 @@ export default function MusicPage() {
 
   return (
     <main className="relative min-h-dvh overflow-hidden">
-      <KenBurnsBackground src={theme.image} alt={theme.label} />
+      <KenBurnsBackground
+        src={theme.image}
+        srcSet={theme.imageSrcSet}
+        alt={theme.label}
+      />
       <div className="relative z-10 mx-auto max-w-4xl px-6 pb-28 pt-24 md:pt-32">
         <header className="fade-in mb-8 text-center">
           <p className="text-sm tracking-[0.22em] text-white/60">MUSIC</p>
@@ -75,6 +79,9 @@ export default function MusicPage() {
                       src={youtubeThumb(track.youtubeId)}
                       alt={track.title}
                       className="h-36 w-full object-cover"
+                      onError={(event) => {
+                        event.currentTarget.src = `https://i.ytimg.com/vi/${track.youtubeId}/hqdefault.jpg`;
+                      }}
                     />
                     <div className="p-4">
                       <p className="text-lg">{track.title}</p>

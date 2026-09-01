@@ -30,7 +30,11 @@ export default function HomePage() {
 
   return (
     <main className="relative min-h-dvh overflow-hidden">
-      <KenBurnsBackground src={theme.image} alt={theme.label} />
+      <KenBurnsBackground
+        src={theme.image}
+        srcSet={theme.imageSrcSet}
+        alt={theme.label}
+      />
       <div className="relative z-10 mx-auto flex min-h-dvh max-w-3xl flex-col justify-center px-6 pb-28 pt-24 text-center md:pb-16">
         <section className="fade-in">
           <p className="mb-4 text-sm tracking-[0.28em] text-white/70">

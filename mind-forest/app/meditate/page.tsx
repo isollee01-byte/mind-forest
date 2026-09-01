@@ -38,7 +38,11 @@ function MeditateContent() {
 
   return (
     <main className="relative min-h-dvh overflow-hidden">
-      <KenBurnsBackground src={theme.image} alt={theme.label} />
+      <KenBurnsBackground
+        src={theme.image}
+        srcSet={theme.imageSrcSet}
+        alt={theme.label}
+      />
       <div className="relative z-20 mx-auto max-w-4xl px-6 pb-28 pt-24 md:pt-32">
         <section className="fade-in">
           <p className="text-center text-sm tracking-[0.2em] text-white/60">
@@ -87,7 +91,10 @@ function MeditateContent() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={item.image}
+                    srcSet={item.imageSrcSet}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     alt={item.name}
+                    decoding="async"
                     className="h-40 w-full object-cover"
                   />
                   <div className="glass px-4 py-4">

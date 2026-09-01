@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useRef, useState } from "react";
+import { KenBurnsBackground } from "@/components/KenBurnsBackground";
 import { YouTubeAudio } from "@/components/YouTubeAudio";
 import { getEnvironment } from "@/data/environments";
 import { getDefaultTrackForEnvironment } from "@/data/music";
@@ -63,13 +64,11 @@ function PlayContent() {
 
   return (
     <main className="relative min-h-dvh overflow-hidden">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <KenBurnsBackground
         src={env.image}
+        srcSet={env.imageSrcSet}
         alt={env.name}
-        className="ken-burns absolute inset-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 bg-black/45" />
       {ready ? (
         <YouTubeAudio
           youtubeId={track.youtubeId}
